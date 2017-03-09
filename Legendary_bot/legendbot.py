@@ -2,6 +2,7 @@
 
 #Imports
 from discord.ext import commands
+import discord
 
 #Autoloading Items
 auto_load = ["gears.sraeg","gears.minigemas"]
@@ -15,7 +16,8 @@ async def on_ready():
     print('The Legend Begins.')
     print('The Legend is about {} with the knowlegd of the scroll called {}'.format(bot.user.name, bot.user.id))
     print('-_-_-_-_-_-_-_-_-_-_-')
-
+    await bot.change_presence(game=discord.Game(name="DiscordHackerBot.exe"))
+    #bot.st = datetime.datetime.now()
 
 
 #Load Extension Command

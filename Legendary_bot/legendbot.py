@@ -36,6 +36,29 @@ async def unloadExt(extName : str):
     bot.unload_extsion(extName)
     await bot.say("{} Has left.".format(extName))
 
+# Reload extension command
+@bot.command()
+async def reloadExt(extName : str):
+    # Reloads an extension.
+    try:
+        tmp = await bot.say("Reloading extension {}".format(extName))
+        bot.unload_extension(extName)
+        bot.load_extension(extName)
+        await bot.edit_message(tmp, "Reloaded extension {}!".format(extName))
+    except Exception as e:
+        await bot.say("```py\n{}: {}\n```".format(type(e).__name__, str(e)))
+
+# Reload startup command
+@bot.command()
+async def reloadBot():
+    for extension in start_up:
+        bot.unload_extension(extension)
+        try:
+            bot.load_extension(extension)
+            await bot.say("Reloaded {}!".format(str(extension)))
+        except Exception as e:
+            await bot.say("```py\n{}: {}\n```".format(type(e).__name__, str(e)))
+
 #Setting up bot
 
 if __name__ == "__main__":

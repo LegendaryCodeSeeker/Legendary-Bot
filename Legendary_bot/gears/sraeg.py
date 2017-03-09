@@ -25,8 +25,8 @@ class general_cmds():
     async def about(self, ctx):
         # Create about embed
         about = discord.Embed(color=discord.Colour.teal())
-        about.add_field(name="Administration commands!", value="For administrating your server.")
-        about.add_field(name="And more!", value="Enjoy!")
+        about.add_field(name="W.I.P.", value="Not finished, nothing is fully done, buggy.")
+        about.add_field(name="test", value="test1")
         about.set_author(name="", icon_url=self.bot.user.avatar_url)
         await self.bot.delete_message(ctx.message)
         await self.bot.say(embed=about)
@@ -38,7 +38,7 @@ class general_cmds():
         embed = discord.Embed(colour=discord.Colour(0x9c9b4f))
         embed.set_thumbnail(url=self.bot.user.avatar_url)
         embed.set_footer(text="Legendary Bot V0.1 Alpha HF.B")
-        embed.add_field(name="General Commands", value="/test - Tests the bot to make sure it's working\n/help - Gives commands in DM\n/about - Tells you about the bot.")
+        embed.add_field(name="General Commands", value="||test - Tests the bot to make sure it's working\n||help - Gives commands in DM\n||about - Tells you about the bot.\n||lotto_help - for info on how to lottery")
         await self.bot.delete_message(ctx.message)
         await self.bot.send_message(ctx.message.author, embed=embed)     
     #bot last boot & ping

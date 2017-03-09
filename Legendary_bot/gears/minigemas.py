@@ -14,7 +14,7 @@ class MG():
     async def lotto_start(self, ctx, lottotime:int):
         async def lotto_timer():
             await asyncio.sleep(lottotime)
-            print("Lotto is over, picking winner.")
+            await self.bot.send_message(ctx.message.channel, 'The lottery is finished, the winning numbers belong too...')
         self.bot.loop.create_task(lotto_timer())
 
 def setup(bot):

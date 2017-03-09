@@ -1,10 +1,10 @@
-#Legendary Bot V0.2(Alpha)[HF.A] @23:07:00 3/6/17
+#Legendary B__҉_t V0.1(Alpha)[HF.A] @23:07:00 3/6/17
 
 #Imports
 from discord.ext import commands
 
 #Autoloading Items
-auto_load = ["gears.sraeg","gears.minigemas"]
+auto_load = ["gears.sraeg"]
 
 #Main
 bot = commands.Bot(command_prefix='||', description="Testing")

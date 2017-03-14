@@ -6,7 +6,7 @@ import discord
 import datetime
 
 #Autoloading Items
-auto_load = ["gears.sraeg","gears.minigms.minigemas","gears.tstcmds","gears.minigms.lottery","gears.Legends"]
+auto_load = ["gears.sraeg","gears.minigms.minigemas","gears.tstcmds","gears.minigms.lottery","gears.Legends","gears.emogies"]
 
 #Main
 bot = commands.Bot(command_prefix='||', description="Testing")
@@ -15,9 +15,9 @@ bot = commands.Bot(command_prefix='||', description="Testing")
 @bot.event
 async def on_ready():
     print('The Legend Begins.')
-    print('The Legend is about {} with the knowlegd of the scroll called {}'.format(bot.user.name, bot.user.id))
+    print('The Legend is about {} with the knowlegd of {} scrolls'.format(bot.user.name, bot.user.id))
     print('-_-_-_-_-_-_-_-_-_-_-')
-    await bot.change_presence(game=discord.Game(name="TattleTaiil"))
+    await bot.change_presence(game=discord.Game(name="TattleTail"))
     bot.st = datetime.datetime.now()
 
 
@@ -33,7 +33,7 @@ async def loadExt(extName : str):
     await bot.say("{} Has arrived..".format(extName))
 
 #Unload Extension Command
-@bot.command
+@bot.command()
 async def unloadExt(extName : str):
     #Unloading an Extension
     bot.unload_extsion(extName)
@@ -45,7 +45,7 @@ async def reloadExt(extName : str):
     # Reloads an extension.
     try:
         tmp = await bot.say("Reloading extension {}".format(extName))
-        bot.unload_extension(extName)
+        bot.unload_extension(kextName)
         bot.load_extension(extName)
         await bot.edit_message(tmp, "Reloaded extension {}!".format(extName))
     except Exception as e:
@@ -54,7 +54,7 @@ async def reloadExt(extName : str):
 # Reload startup command
 @bot.command()
 async def reloadBot():
-    for extension in start_up:
+    for extension in auto_load:
         bot.unload_extension(extension)
         try:
             bot.load_extension(extension)

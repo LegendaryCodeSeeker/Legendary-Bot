@@ -26,7 +26,7 @@ class TST():
     #bot donate test
     @commands.command(pass_context=True)
     async def bdtst(self, ctx, too, amtfdrops:int):
-        await self.bot.say('/donate {} {}'.format(too, amtfdrops))
+        await self.bot.say('/give_tea {} {}'.format(too, amtfdrops))
         await self.bot.delete_message(ctx.message)
 def setup(bot):
     bot.add_cog(TST(bot))

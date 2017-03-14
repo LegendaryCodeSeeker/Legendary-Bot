@@ -20,8 +20,8 @@ class LTry():
         if lottoOn == True:
             await self.bot.send_message(ctx.message.channel, 'Sorry but theres a lottery already going on.\n Do ||lotto for more info')
         else:
-            if lottotime < 300 or lottotime > 10800:
-                 await self.bot.send_message(ctx.message.channel, 'Lottery must last 5 mins or longer, but no longer than 3hrs.')
+            if lottotime < 180 or lottotime > 10800:
+                 await self.bot.send_message(ctx.message.channel, 'Lottery must last 3 mins or longer, but no longer than 3hrs.')
             else:
                 if lottodrops < 50:
                     await self.bot.send_message(ctx.message.channel, 'You must start a Lottery With 50 or more Tea Drops in the pot.')
